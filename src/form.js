@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import "./form.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cookies from "js-cookie";
+import { Helmet } from "react-helmet";
 
 function Form() {
   const [name, setName] = useState("");
@@ -72,6 +73,10 @@ function Form() {
 
   return (
     <div className="bg-green-100 form-padding border-t-2 border-zinc-950" id="form">
+      <Helmet>
+        <title>Tri2champ</title>
+        <link rel="icon" type="image/png" href="logo1.png" />
+      </Helmet>
     <div className="form-container rounded-xl bg-emerald-800" >
     <p
           style={{ fontSize: "2rem", color: "white",textAlign:'center' }}
