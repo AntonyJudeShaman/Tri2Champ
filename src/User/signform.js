@@ -8,18 +8,19 @@ import { ref, push, child, update, onValue } from "firebase/database";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./nav";
 import styles from "./signin.module.scss";
-import Tilt from "react-parallax-tilt";
 import {
   getStorage,
   ref as storageRef,
   uploadBytes,
   getDownloadURL,
 } from "firebase/storage";
-import { firebaseConfig } from "../firebase";
+import {app as firebaseApp} from "../firebase";
+import Tilt from "react-parallax-tilt";
+import { Helmet } from "react-helmet";
 
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const storage = getStorage(app);
+const database = getDatabase(firebaseApp);
+const storage = getStorage(firebaseApp);
+
 
 function UserProfile() {
   const [firstName, setFirstName] = useState(null);
@@ -243,6 +244,10 @@ function UserProfile() {
 
   return (
     <>
+    <Helmet>
+          <title>Tri2champ</title>
+          <link rel="icon" type="image/png" href="logo.png" />
+        </Helmet>
       <Navbar />
       <div >
         <div
@@ -251,30 +256,32 @@ function UserProfile() {
           <div className="user-registration ">
             <div className="container register">
               <div className="row ">
-                <div className="col-md-10  register-right mx-auto d-block">
+                <div className="col-md-10 register-right mx-auto d-block">
                   <div className="tab-content" id="myTabContent">
-                    <div className="register-heading pb-3">
-                      <h3 className="pb-4 user-profile">User Profile</h3>
-                      <div className="d-flex justify-content-center align-items-center">
-                        <div className="profile-image-container ">
+                    <div className="register-heading pb-3 ">
+                      <h3 className="pb-4">User Profile</h3>
+                      <div className="col-md-6  mx-auto d-block">
+                        <div className="profile-image-container border-2 border-blue-500">
                           {isUploading ? (
-                            <div className="loading-spinner d-flex justify-content-center align-items-center"></div>
+                            <div className="loading-spinner"></div>
                           ) : profileImage ? (
-                            <Tilt><img
+                            <Tilt>
+                            <img
                               src={profileImage}
                               alt="Profile"
                               className="profile-image "
                             />
                             </Tilt>
                           ) : (
-                            <div className="no-profile-image">
+                            <div className="no-profile-image ">
                               No Profile Image
                             </div>
                           )}
                           
                         </div>
+                        
                         {isEditMode && !isUploading && (
-                            <label className="upload-button  rounded pt-3 text-red-400">
+                            <label className="upload-button  rounded pt-3 text-red-50">
                               Upload / Change Image
                               <input
                                 type="file"

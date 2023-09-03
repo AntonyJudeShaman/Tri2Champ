@@ -8,6 +8,7 @@ import {
 import { faEnvelope as Mail } from "@fortawesome/free-solid-svg-icons"; 
 import "./footer.css";
 import logo from "../logo1.png";
+import { Helmet } from "react-helmet";
 
 function Footer() {
   const scrollToTop = () => {
@@ -16,6 +17,10 @@ function Footer() {
 
   return (
     <>
+    <Helmet>
+          <title>Tri2champ</title>
+          <link rel="icon" type="image/png" href="logo.png" />
+        </Helmet>
       <div className="footer-container bg-gradient-to-b from-teal-900 to-zinc-950  border-indigo-300">
         <div className="footer-left col-3 col-sm-3 col-md-3 col-lg-3">
           <a href="#nav1" onClick={scrollToTop}>

@@ -86,7 +86,7 @@ function Form() {
           type="text"
           id="from_name"
           value={name}
-          className="rounded iinput pb-2 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
+          className="rounded iinput mb-3 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
         />
@@ -94,7 +94,7 @@ function Form() {
           type="email"
           name="email"
           id="email"
-          className="rounded iinput pb-2 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
+          className="rounded iinput mb-3 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
           value={email}
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -103,7 +103,7 @@ function Form() {
           type="phone"
           name="phone"
           id="phone"         
-          className="rounded iinput pb-2 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
+          className="rounded iinput mb-3 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
           value={phone}
           placeholder="Phone Number"
           onChange={(e) => setPhone(e.target.value)}
@@ -113,7 +113,7 @@ function Form() {
           name="message"
           value={message}
           style={{color:'aliceblue'}}
-          className="rounded iinput pb-2 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
+          className="rounded iinput mb-3 rounded-xl text-zinc-950 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600 bg-gradient-to-b from-zinc-200 to-teal-200 rounded-xl"
           placeholder="Feel free to ask anything"
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>

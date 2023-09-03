@@ -1,226 +1,121 @@
-@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,800&display=swap");
-
-
-
-.frm {
-  color: rgb(0, 0, 0);
-  font-family: "Montserrat";
-  padding-left: 15%;
-  font-weight: 600;
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  border: 2px solid #000000;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
 }
 
-.ptag{
-  font-size: 250%;
-
+.form-padding{
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
-
-@media only screen and (max-width: 575px) {
-    
-  .fnt {
-    font-size: 18px;
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background: -webkit-linear-gradient( #053f7e,#000f1f,);
+        border: 2px solid #c300ff;
+        
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .form-padding{
+        padding-top: 15%;
+        padding-bottom: 15%;
+      }
   }
 
-  .help {
-    font-size: 60%;
-    padding-bottom: 1%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: -webkit-linear-gradient( left,#ffffff,#000f1f,) !important;
+  }
+  
+  .top {
+    color:aliceblue;
+    margin-bottom: 3%;
+    margin-left: -90%;
+    margin-top: 3%;
   }
 
-  label{
-    font-size: 60%;
-    padding-bottom: 1%;
-  }
-
-  input {
-    color: black;
-    font-size: 0.5rem;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    min-height: 1vh;
-    min-width: 43%;
-    margin-bottom: 2vh;
-  }
-
-  button {
-    font-size: 25%;
-    min-height: 5vh;
-    min-width: 38%;
-    
-  }
-
-  textarea{
-    font-size: 60%;
-    min-height: 5vh;
-    min-width: 43%;
-  }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
  
-  .fnt  {
-    font-size: 120%;
+
+  .mtop {
+    color:aliceblue;
+    margin-bottom: 5px;
+    margin-left: -85%;
+    margin-top: 3%;
   }
 
-  .help {
-    font-size: 70%;
-    padding-bottom: 1%;
-  }
-
-  label{
-    font-size: 70%;
-    padding-bottom: 1%;
-  }
-
-  .input {
-    color: black;
-    font-size: 40%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    min-height: 2vh;
-    min-width: 23%;
-    margin-bottom: 2vh;
-  }
-
-  button {
-    font-size: 3vh;
-    min-height: 5vh;
-    width: 30%;
+  @media (max-width: 450px) {
+    .top {
+      color:aliceblue;
+      margin-bottom: 3%;
+      margin-left: -80%;
+      margin-top: 3%;
+    }
+  
    
-  }
-
-  textarea{
-    font-size: 70%;
-    min-height: 5vh;
-    min-width: 33%;
-  }
-}
-
-
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
   
-  .fnt  {
-    font-size: 140%;
-  }
-
-  .help {
-    font-size: 80%;
-    padding-bottom: 1%;
-  }
-
-  label{
-    font-size: 80%;
-    padding-bottom: 1%;
-  }
-
-  input {
-    color: black;
-    font-size: 80%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    min-height: 4vh;
-    min-width: 27%;
-    margin-bottom: 2vh;
-  }
-
-  button {
-    font-size: 2.5vh;
-    min-height: 5vh;
-    width: 20%;
-  
-  }
-
-  textarea{
-    font-size: 80%;
-    min-height: 5vh;
-    min-width: 27%;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  
-  .fnt  {
-    font-size: 170%;
-  }
-
-  .help {
-    font-size: 100%;
-    padding-bottom: 1%;
-  }
-
-  label{
-    font-size: 100%;
-    padding-bottom: 1%;
-  }
-
-  input {
-    color: black;
-    font-size: 90%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    min-height: 6vh;
-    min-width: 33%;
-    margin-bottom: 2vh;
-  }
-
-  button {
-    font-size: 3vh;
-    min-height: 6vh;
-    width: 15%;
+    .mtop {
+      color:aliceblue;
+      margin-bottom: 5px;
+      margin-left: -75%;
+      margin-top: 3%;
+    }
     
   }
-  textarea{
-    font-size: 100%;
-    min-height: 8vh;
-    min-width: 33%;
+  
+  .iinput {
+    padding: 10px;
+    
+    border: 1px solid #181a1b;
+    border-radius: 5px;
+    font-size: 2vh;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
   }
+
+  .iinput:focus
+ {
+  background-color: #0d0e0f;
 }
 
-@media only screen and (min-width: 1200px) {
-  
-  .fnt {
-    font-size: 200%
-    }
-
-    .help {
-      font-size: 100%;
-      padding-bottom: 1%;
-    }
-  
-    label{
-      font-size: 100%;
-      padding-bottom: 1%;
-    }
-
-    input {
-      color: black;
-      font-size: 100%;
-      padding-left: 1.5%;
-      padding-right: 1.5%;
-      min-height: 8vh;
-      min-width: 33%;
-      margin-bottom: 2vh;
-    }
-
-    button {
-      font-size: 3vh;
-      min-height: 9vh;
-      width: 18%;
-      margin-bottom: 0%;
-    }
-
-    textarea{
-      font-size: 100%;
-      min-height: 8vh;
-      min-width: 33%;
-    }
+.iinput:hover {
+  border: 3px solid#a200ff;
 }
+  
+  .bbutton {
+    padding: 10px 20px;
+    color: #080808;
+    border: 2px solid #181e1f;
+    border-radius: 5px;
+    font-size: 2vh;
+    cursor: pointer;
+    margin-top: 2%;
+    width: 100%;
+  }
+  
+  .bbutton:hover {
+    border: 2px solid #353c38;
+  }
 
+  .iinput::placeholder {
+    color: rgb(0, 0, 0);
+  }
+  
 
-
-
-
-
-
-
+  .tiltneon {
+    font-family: "Tilt neon";
+    font-weight: 400;
+  }
+  
+  
+  

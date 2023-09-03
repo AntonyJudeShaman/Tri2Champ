@@ -30,9 +30,9 @@ function UserTeam() {
   return (
     <>
        <Helmet>
-        <title>Team</title>
-        <link rel="icon" type="image/png" href="logo.png" />
-      </Helmet>
+          <title>Tri2champ</title>
+          <link rel="icon" type="image/png" href="logo.png" />
+        </Helmet>
       <div>
         <Navbar/>
         <div style={{ fontSize: "100%", textAlign:'justify' }}>

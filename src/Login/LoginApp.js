@@ -15,6 +15,7 @@ import { FaGoogle } from "react-icons/fa";
 import NavbarL from "./navbar";
 import  Footer from "../footer";
 import Tilt from "react-parallax-tilt";
+import { Helmet } from "react-helmet";
 
 function Login() {
   const auth = getAuth(app);
@@ -23,13 +24,21 @@ function Login() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState("");
   const [successs, setSuccesss] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      SignIn();
+    }
+  };
+
   const SignIn = () => {
+    setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         localStorage.setItem("authUID", userCredential.user.uid);
@@ -47,6 +56,7 @@ function Login() {
           setTimeout(() => setSuccesss(false), 1500);
           setTimeout(() => (window.location.pathname = "/UserPage"), 1500);
         }
+        setIsLoading(false);
       })
 
       .catch((error) => {
@@ -63,20 +73,27 @@ function Login() {
               setSuccess(true);
               setTimeout(() => setSuccess(false), 1500);
               setTimeout(() => (window.location.pathname = "/AdminPage"), 1500);
+              setIsLoading(false);
             } else {
               setSuccess(true);
               setTimeout(() => setSuccess(false), 1500);
               setTimeout(() => (window.location.pathname = "/UserPage"), 1500);
+              setIsLoading(false);
             }
           })
           .catch((error) => {
             window.alert("Invalid Email / Password");
+            setIsLoading(false);
           });
       });
   };
   const currPath = window.location.pathname;
   return (
     <>
+    <Helmet>
+          <title>Tri2champ</title>
+          <link rel="icon" type="image/png" href="logo.png" />
+        </Helmet>
       <NavbarL />
       <div className="login-container ">
         <div className="LoginApp pt-5 pb-5 ">
@@ -101,6 +118,7 @@ function Login() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              onKeyPress={handleKeyPress}
             />
             <br />
             <input
@@ -111,13 +129,23 @@ function Login() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              onKeyPress={handleKeyPress}
             />
             <br />
             <button
-              className="bg-orange-400 text-zinc-50  rounded-lg  sig"
+              className={`bg-orange-400 text-zinc-50 rounded-lg sig ${
+                isLoading ? "loading" : ""
+              }`}
               onClick={SignIn}
+              disabled={isLoading}
             >
-              Sign Up / Log In
+              {isLoading ? (
+                <>
+                  <div className="spinner mx-auto d-block"></div>
+                </>
+              ) : (
+                "Sign Up / Log In"
+              )}
             </button>
             <br />
             <br />
@@ -139,12 +167,12 @@ function Login() {
             </a>
 
             {successs && (
-              <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded-lg z-50">
+              <div className="success-message p-3 rounded-pill">
                 Log In successful !!
               </div>
             )}
             {success && (
-              <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded-lg z-50">
+              <div className="success-message p-3 rounded-pill">
                 Sign Up successful !!
               </div>
             )}

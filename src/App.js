@@ -13,6 +13,7 @@ import Footer from "./footer";
 import { scroller } from "react-scroll";
 import Card from "./card";
 import Team from "./Team";
+import { Helmet } from "react-helmet";
 import Preloader from "./pre";
 import AdminPage from "./Admin/AdminPage";
 import UserPage from "./User/UserPage";
@@ -88,6 +89,11 @@ function App() {
   } 
   else {
     return (
+      <>
+      <Helmet>
+          <title>Tri2champ</title>
+          <link rel="icon" type="image/png" href="logo.png" />
+        </Helmet>
       <div className="app-wrapper tilt-neon">
         <Preloader load={load} />
         <div id={load ? "no-scroll" : "scroll"}>
@@ -104,6 +110,7 @@ function App() {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

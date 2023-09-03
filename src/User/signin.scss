@@ -8,13 +8,16 @@ $color_ship_gray_approx: #383d41;
 $color_science_blue_approx: #0062cc;
 $color_abbey_approx: #000000;
 
+
+
+
 .container-wrapper {
   display: flex;
   flex-direction: column;
 }
 @media only screen and (min-width:768px){
 .text-gradient{
-   background: linear-gradient(to bottom, #a16204, #dd927c);
+   background: linear-gradient(to bottom, #c401cb, #dd927c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -22,12 +25,27 @@ $color_abbey_approx: #000000;
 
 @media only screen and (max-width:768px){
   .text-gradient{
-     background: linear-gradient(to bottom, #1a1713, #000000);
+     background: linear-gradient(to bottom, #520404, #6d0101);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   }
 
+  @media only screen and (min-width:768px){
+    .text-gradientt{
+       background: linear-gradient(to bottom, #cbe6ff, #ee9a81);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    }
+    
+    @media only screen and (max-width:768px){
+      .text-gradientt{
+         background: linear-gradient(to bottom, #1a1713, #000000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      }
 
 
 .content-wrapper {
@@ -332,13 +350,14 @@ $color_abbey_approx: #000000;
 
 .register-right {
   margin-left: -1%;
-  margin-bottom: -10%;
   background: $color_alabaster_approx;
   background-size: cover;
-  border-top-left-radius: 20% 30%;
-  border-bottom-left-radius: 20% 30%;
-  border-top-right-radius: 20% 30%;
-  border-bottom-right-radius: 20% 30%;
+  border-top-left-radius: 5% 10%;
+  border-bottom-left-radius: 5% 10%;
+  border-top-right-radius: 5% 10%;
+  border-bottom-right-radius: 5% 10%;
+  border: 4px solid rgb(29, 255, 236);
+
 }
 
 @media (max-width: 768px) {
@@ -348,10 +367,7 @@ $color_abbey_approx: #000000;
     margin-bottom: 0%;
     background: transparent;
     background-size: cover;
-    border-top-left-radius: 20% 30%;
-    border-bottom-left-radius: 20% 30%;
-    border-top-right-radius: 20% 30%;
-    border-bottom-right-radius: 20% 30%;
+    border: none;
   }
 }
 
@@ -406,4 +422,64 @@ $color_abbey_approx: #000000;
 .form-control:hover {
   border: 2.5px solid #0bb0c6;
   background: linear-gradient(#bffef2, #b8cee7);
+}
+
+.profile-image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.loading-spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #d40071;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-profile-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  color: #888;
+}
+
+
+
+.form-control {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+
+.success-message {
+  background-color: #36b37e;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
 }
